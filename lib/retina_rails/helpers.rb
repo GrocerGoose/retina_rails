@@ -22,7 +22,7 @@ module ActionView
 
         # Check if we can find the dimensions of the uploaded image.
         # If no image or dimensions available use default.
-        if model.retina_dimensions.kind_of?(Hash) && model.retina_dimensions[mounted_to.to_sym]
+        if model.retina_dimensions.kind_of?(Hash) && model.retina_dimensions[mounted_to.to_sym] && cookies[:devicePixelRatio].to_f > 1
           dimensions = model.retina_dimensions[mounted_to.to_sym][version.to_sym]
         else
           if default.kind_of?(Array)
@@ -34,6 +34,7 @@ module ActionView
         options = dimensions.merge(options)
 
         image_tag(model.send(mounted_to).url(version), options)
+
       end
 
       ##

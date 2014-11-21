@@ -44,6 +44,7 @@ Installation
 
 1. Add `gem 'retina_rails', '~> 2.0.0'` to your Gemfile.
 1. Run `bundle install`.
+1. Add retina_rails.js to your application.js
 
 Migrations
 ------------
