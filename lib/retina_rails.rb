@@ -7,7 +7,7 @@ require 'retina_rails/helpers'
 module RetinaRails
 
   if defined?(Rails)
-    class Railtie < Rails::Railtie
+    class Railtie < Rails::Engine
       initializer "retina_rails.include_extenions" do
         RetinaRails::Extensions.include_extensions
       end
